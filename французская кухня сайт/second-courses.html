@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вторые блюда</title>
+  <link rel="stylesheet" href="style drinks.css">
+</head>
+<body>
+  <header>
+    <h1>Вторые блюда французской кухни</h1>
+  </header>
+  <main>
+    <section class="drinks-category">
+      <div class="drinks-grid" id="second-courses-grid"></div>
+    </section>
+  </main>
+  <button id="back-to-main" onclick="location.href='main.html'">Вернуться в главное меню</button>
+  <script>
+    const secondCourses = [
+      { name: "Утка по-орлеански", image: "croissant.png", description: "Сочная утка с вином.", recipe: "<ul><li>Утка</li><li>Красное вино</li></ul>" },
+      { name: "Телятина с грибами", image: "chees.png", description: "Мясо в сливочном соусе.", recipe: "<ul><li>Телятина</li><li>Грибы</li></ul>" },
+      { name: "Курица по-провансальски", image: "grapes.png", description: "С ароматными травами.", recipe: "<ul><li>Курица</li><li>Пряности</li></ul>" },
+      { name: "Говядина Бургиньон", image: "chees.png", description: "Тушёная говядина с вином.", recipe: "<ul><li>Говядина</li><li>Красное вино</li></ul>" },
+      { name: "Рататуй", image: "grapes.png", description: "Овощное блюдо из Прованса.", recipe: "<ul><li>Баклажан</li><li>Кабачок</li></ul>" },
+      { name: "Петух в вине", image: "croissant.png", description: "Классическое блюдо из птицы.", recipe: "<ul><li>Петух</li><li>Красное вино</li></ul>" },
+      { name: "Фрикасе из курицы", image: "chees.png", description: "Нежное тушёное мясо.", recipe: "<ul><li>Курица</li><li>Сливки</li></ul>" },
+      { name: "Мясо по-деревенски", image: "grapes.png", description: "Простое и вкусное.", recipe: "<ul><li>Свинина</li><li>Картофель</li></ul>" },
+      { name: "Ягнёнок с розмарином", image: "croissant.png", description: "Ароматное мясо ягнёнка.", recipe: "<ul><li>Ягнёнок</li><li>Розмарин</li></ul>" },
+      { name: "Форель по-французски", image: "chees.png", description: "Запечённая рыба.", recipe: "<ul><li>Форель</li><li>Лимон</li></ul>" }
+    ];
+    const container = document.getElementById("second-courses-grid");
+    secondCourses.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${item.name}</h3>
+        <img src="${item.image}" alt="${item.name}" style="width:100%; height:auto;">
+        <p>${item.description}</p>
+        <details><summary>Рецепт</summary>${item.recipe}</details>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>

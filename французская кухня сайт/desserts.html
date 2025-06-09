@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Десерты</title>
+  <link rel="stylesheet" href="style drinks.css">
+</head>
+<body>
+  <header>
+    <h1>Десерты французской кухни</h1>
+  </header>
+  <main>
+    <section class="drinks-category">
+      <div class="drinks-grid" id="desserts-grid"></div>
+    </section>
+  </main>
+  <button id="back-to-main" onclick="location.href='main.html'">Вернуться в главное меню</button>
+  <script>
+    const desserts = [
+      { name: "Крем-брюле", image: "chees.png", description: "Запечённый сливочный десерт.", recipe: "<ul><li>Сливки</li><li>Желтки</li></ul>" },
+      { name: "Круассан", image: "croissant.png", description: "Слоёная выпечка с маслом.", recipe: "<ul><li>Тесто</li><li>Яйцо</li></ul>" },
+      { name: "Макарон", image: "grapes.png", description: "Миндальное печенье с кремом.", recipe: "<ul><li>Миндальная мука</li><li>Белки</li></ul>" },
+      { name: "Тарт Татен", image: "chees.png", description: "Перевёрнутый яблочный пирог.", recipe: "<ul><li>Яблоки</li><li>Карамель</li></ul>" },
+      { name: "Фондан", image: "croissant.png", description: "Шоколадный пирожок с начинкой.", recipe: "<ul><li>Шоколад</li><li>Яйца</li></ul>" },
+      { name: "Эклеры", image: "grapes.png", description: "Заварные пирожные с кремом.", recipe: "<ul><li>Мука</li><li>Крем</li></ul>" },
+      { name: "Мусс", image: "chees.png", description: "Воздушный десерт.", recipe: "<ul><li>Сливки</li><li>Шоколад</li></ul>" },
+      { name: "Суфле", image: "croissant.png", description: "Лёгкое запечённое тесто.", recipe: "<ul><li>Белки</li><li>Мука</li></ul>" },
+      { name: "Профитроли", image: "grapes.png", description: "Заварные шарики с начинкой.", recipe: "<ul><li>Тесто</li><li>Крем</li></ul>" },
+      { name: "Фруктовый тарт", image: "chees.png", description: "Тарт с заварным кремом и фруктами.", recipe: "<ul><li>Фрукты</li><li>Крем</li></ul>" }
+    ];
+    const container = document.getElementById("desserts-grid");
+    desserts.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${item.name}</h3>
+        <img src="${item.image}" alt="${item.name}" style="width:100%; height:auto;">
+        <p>${item.description}</p>
+        <details><summary>Рецепт</summary>${item.recipe}</details>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>

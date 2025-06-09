@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Первые блюда</title>
+  <link rel="stylesheet" href="style drinks.css">
+</head>
+<body>
+  <header>
+    <h1>Первые блюда французской кухни</h1>
+  </header>
+  <main>
+    <section class="drinks-category">
+      <div class="drinks-grid" id="first-courses-grid"></div>
+    </section>
+  </main>
+  <button id="back-to-main" onclick="location.href='main.html'">Вернуться в главное меню</button>
+  <script>
+    const firstCourses = [
+      { name: "Луковый суп", image: "Луковый суп.JPG", description: "Классическое французское первое блюдо с насыщенным вкусом.", recipe: "<ul><li>Лук</li><li>Бульон</li></ul>", calcCard: "<ul><li>Лук – 100 г</li><li>Бульон – 200 мл</li></ul>" },
+      { name: "Буйабес", image: "Буйабес.JPG", description: "Провансальский рыбный суп.", recipe: "<ul><li>Рыба</li><li>Томаты</li></ul>", calcCard: "<ul><li>Рыба – 150 г</li><li>Креветки – 50 г</li></ul>" },
+      { name: "Капустный суп", image: "Капустный суп.JPG", description: "Лёгкий и полезный овощной суп с капустой.", recipe: "<ul><li>Капуста</li><li>Картофель</li></ul>", calcCard: "<ul><li>Капуста – 100 г</li><li>Картофель – 80 г</li></ul>" },
+      { name: "Крем суп с сыром", image: "Крем суп с сыром.JPG", description: "Нежный суп с сыром и сливками.", recipe: "<ul><li>Сыр</li><li>Сливки</li></ul>", calcCard: "<ul><li>Сыр – 50 г</li><li>Сливки – 100 мл</li></ul>" },
+      { name: "Овощной суп", image: "Овощной суп.JPG", description: "Суп из сезонных овощей.", recipe: "<ul><li>Морковь</li><li>Кабачок</li></ul>", calcCard: "<ul><li>Овощи – 150 г</li><li>Бульон – 200 мл</li></ul>" },
+      { name: "Суп из чечевицы", image: "Суп из чечевицы.JPG", description: "Питательный суп с чечевицей.", recipe: "<ul><li>Чечевица</li><li>Овощи</li></ul>", calcCard: "<ul><li>Чечевица – 100 г</li><li>Морковь – 50 г</li></ul>" },
+      { name: "Суп-пюре из грибов", image: "Суп-пюре из грибов.JPG", description: "Кремовый суп из шампиньонов.", recipe: "<ul><li>Грибы</li><li>Сливки</li></ul>", calcCard: "<ul><li>Грибы – 150 г</li><li>Сливки – 100 мл</li></ul>" },
+      { name: "Суп с курицей", image: "Суп с курицей.JPG", description: "Домашний суп с курицей и овощами.", recipe: "<ul><li>Курица</li><li>Картофель</li></ul>", calcCard: "<ul><li>Курица – 100 г</li><li>Овощи – 100 г</li></ul>" },
+      { name: "Суп с пореем", image: "Суп с пореем.JPG", description: "Нежный суп из лука-порея.", recipe: "<ul><li>Порей</li><li>Картофель</li></ul>", calcCard: "<ul><li>Порей – 80 г</li><li>Картофель – 100 г</li></ul>" },
+      { name: "Томатный суп", image: "Томатный суп.JPG", description: "Кисло-сладкий томатный суп.", recipe: "<ul><li>Помидоры</li><li>Базилик</li></ul>", calcCard: "<ul><li>Томаты – 150 г</li><li>Бульон – 150 мл</li></ul>" }
+    ];
+    const container = document.getElementById("first-courses-grid");
+    firstCourses.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${item.name}</h3>
+        <img src="${item.image}" alt="${item.name}" style="width:100%; height:auto;">
+        <p>${item.description}</p>
+        <details><summary>Рецепт</summary>${item.recipe}</details>
+        <details><summary>Калькуляционная карта</summary>${item.calcCard}</details>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>

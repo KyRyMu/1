@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Салаты</title>
+  <link rel="stylesheet" href="style drinks.css">
+</head>
+<body>
+  <header>
+    <h1>Салаты французской кухни</h1>
+  </header>
+  <main>
+    <section class="drinks-category">
+      <div class="drinks-grid" id="salads-grid"></div>
+    </section>
+  </main>
+  <button id="back-to-main" onclick="location.href='main.html'">Вернуться в главное меню</button>
+  <script>
+    const salads = [
+      { name: "Салат Нисуаз", image: "grapes.png", description: "С тунцом, яйцами и овощами.", recipe: "<ul><li>Тунец</li><li>Фасоль</li></ul>" },
+      { name: "С козьим сыром", image: "chees.png", description: "С орехами и мёдом.", recipe: "<ul><li>Сыр</li><li>Мёд</li></ul>" },
+      { name: "Летний салат", image: "croissant.png", description: "Свежие овощи с зеленью.", recipe: "<ul><li>Помидоры</li><li>Огурцы</li></ul>" },
+      { name: "Цезарь по-французски", image: "grapes.png", description: "Салат с курицей и сыром.", recipe: "<ul><li>Курица</li><li>Сыр</li></ul>" },
+      { name: "Свекольный салат", image: "chees.png", description: "С козьим сыром и руколой.", recipe: "<ul><li>Свёкла</li><li>Сыр</li></ul>" },
+      { name: "Салат с уткой", image: "croissant.png", description: "Тёплый салат с уткой и шпинатом.", recipe: "<ul><li>Утка</li><li>Шпинат</li></ul>" },
+      { name: "Салат с лососем", image: "grapes.png", description: "Слабосолёный лосось и овощи.", recipe: "<ul><li>Лосось</li><li>Авокадо</li></ul>" },
+      { name: "Картофельный салат", image: "chees.png", description: "С горчичной заправкой.", recipe: "<ul><li>Картофель</li><li>Горчица</li></ul>" },
+      { name: "Салат с яйцом пашот", image: "croissant.png", description: "Хрустящий салат с тёплым яйцом.", recipe: "<ul><li>Яйцо</li><li>Салатные листья</li></ul>" },
+      { name: "Фруктовый салат", image: "grapes.png", description: "С мёдом и орехами.", recipe: "<ul><li>Фрукты</li><li>Орехи</li></ul>" }
+    ];
+    const container = document.getElementById("salads-grid");
+    salads.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${item.name}</h3>
+        <img src="${item.image}" alt="${item.name}" style="width:100%; height:auto;">
+        <p>${item.description}</p>
+        <details><summary>Рецепт</summary>${item.recipe}</details>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
