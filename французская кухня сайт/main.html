@@ -232,104 +232,120 @@
             }
 
             /* ... другие стили ... */
-            .honeycomb {
-                display: none;
-            }
-
-            .loader .honeycomb { /*  Показываем анимацию внутри .loader */
-                display: block;
-            }
-        </style>
-
-    </head>
-    <body>
-        <div class="honeycomb">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="loader">
-            <div class="spinner"></div>
-        </div>
-
-        <header class="header">
-            <img src="logo.PNG" alt="Логотип" class="logo-image">
-            <div class="title">
-                <h1>Электронная книга: Французская кухня</h1>
-            </div>
-        </header>
-
-        <main class="main-content">
-
-            <div id="floating-background">
-                <div class="floating-item">
-                    <img src="croissant.PNG" alt="круассан">
-                </div>
-                <div class="floating-item">
-                    <img src="chees.PNG" alt="сыр">
-                </div>
-                <div class="floating-item">
-                    <img src="grapes.PNG" alt="виноград">
-                </div>
-            </div>
-
-
-            <section class="intro">
-                <h1 class="typed-text">Добро пожаловать в мир французской кухни!</h1>
-            </section>
-
-
-            <div class="card-container">
-                <div class="card" onclick="navigateTo('history.html')">
-                    <span class="card-icon"> 📜</span>
-                    <h3>История</h3>
-                    <p>Узнайте о традициях и эволюции французской кухни.</p>
-                </div>
-                <div class="card" onclick="navigateTo('first-courses.html')">
-                    <div class="card-icon">🍲</div>
-                    <h3>Первые блюда</h3>
-                    <p>Откройте для себя рецепты супов и закусок.</p>
-                </div>
-                <div class="card" onclick="navigateTo('#second-courses')">
-                    <div class="card-icon">🍖</div>
-                    <h3>Вторые блюда</h3>
-                    <p>Насладитесь разнообразием основных блюд.</p>
-                </div>
-                <div class="card" onclick="navigateTo('#desserts')">
-                    <div class="card-icon">🍰</div>
-                    <h3>Десерты</h3>
-                    <p>Попробуйте изысканные французские десерты.</p>
-                </div>
-                <div class="card" onclick="navigateTo('#salads')">
-                    <div class="card-icon">🥗</div>
-                    <h3>Салаты</h3>
-                    <p>Свежие и вкусные рецепты салатов.</p>
-                </div>
-                <div class="card" onclick="navigateTo('drinks.html')">
-                    <div class="card-icon">🍷</div>
-                    <h3>Напитки</h3>
-                    <p>Изучите разнообразие французских напитков.</p>
-                </div>
-            </div>
-        </main>
-
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="contact-info">
-                    <h3>Контакты автора</h3>
-                    <p>Gmail: k.leshkov34@gmail.com</p>
-                    <p>Телефон: +705 128 94 67</p>
-                </div>
-                <div class="qr-code">
-                    <img src="qr-code-placeholder.png" alt="QR-код" class="qr-image">
-                </div>
-                <div class="additional-info">
-                    <h3>О учебнике</h3>
-                    <p>В учебнике будет рассказано о истории Французской кухни и предоставлены рецепты разнообразных блюд.</p>
+          (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a//\321\204\321\200\320\260\320\275\321\206\321\203\320\267\321\201\320\272\320\260\321\217 \320\272\321\203\321\205\320\275\321\217 \321\201\320\260\320\271\321\202/main.html"	 b//\321\204\321\200\320\260\320\275\321\206\321\203\320\267\321\201\320\272\320\260\321\217 \320\272\321\203\321\205\320\275\321\217 \321\201\320\260\320\271\321\202/main.html"	
+index 2e2fbd97f0aaa3028837148884c7e6689fb20223..65c1b1f144a52161e6276558d7cfb6489c64433a 100644
+--- a//\321\204\321\200\320\260\320\275\321\206\321\203\320\267\321\201\320\272\320\260\321\217 \320\272\321\203\321\205\320\275\321\217 \321\201\320\260\320\271\321\202/main.html"	
++++ b//\321\204\321\200\320\260\320\275\321\206\321\203\320\267\321\201\320\272\320\260\321\217 \320\272\321\203\321\205\320\275\321\217 \321\201\320\260\320\271\321\202/main.html"	
+@@ -235,98 +235,98 @@
+             .honeycomb {
+                 display: none;
+             }
+ 
+             .loader .honeycomb { /*  Показываем анимацию внутри .loader */
+                 display: block;
+             }
+         </style>
+ 
+     </head>
+     <body>
+         <div class="honeycomb">
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+         </div>
+         <div class="loader">
+             <div class="spinner"></div>
+         </div>
+ 
+         <header class="header">
+-            <img src="logo.PNG" alt="Логотип" class="logo-image">
++            <img src="logo.png" alt="Логотип" class="logo-image">
+             <div class="title">
+                 <h1>Электронная книга: Французская кухня</h1>
+             </div>
+         </header>
+ 
+         <main class="main-content">
+ 
+             <div id="floating-background">
+                 <div class="floating-item">
+-                    <img src="croissant.PNG" alt="круассан">
++                    <img src="croissant.png" alt="круассан">
+                 </div>
+                 <div class="floating-item">
+-                    <img src="chees.PNG" alt="сыр">
++                    <img src="chees.png" alt="сыр">
+                 </div>
+                 <div class="floating-item">
+-                    <img src="grapes.PNG" alt="виноград">
++                    <img src="grapes.png" alt="виноград">
+                 </div>
+             </div>
+ 
+ 
+             <section class="intro">
+                 <h1 class="typed-text">Добро пожаловать в мир французской кухни!</h1>
+             </section>
+ 
+ 
+             <div class="card-container">
+                 <div class="card" onclick="navigateTo('history.html')">
+                     <span class="card-icon"> 📜</span>
+                     <h3>История</h3>
+                     <p>Узнайте о традициях и эволюции французской кухни.</p>
+                 </div>
+                 <div class="card" onclick="navigateTo('first-courses.html')">
+                     <div class="card-icon">🍲</div>
+                     <h3>Первые блюда</h3>
+                     <p>Откройте для себя рецепты супов и закусок.</p>
+                 </div>
+-                <div class="card" onclick="navigateTo('#second-courses')">
++                <div class="card" onclick="navigateTo('second-courses.html')">
+                     <div class="card-icon">🍖</div>
+                     <h3>Вторые блюда</h3>
+                     <p>Насладитесь разнообразием основных блюд.</p>
+                 </div>
+-                <div class="card" onclick="navigateTo('#desserts')">
++                <div class="card" onclick="navigateTo('desserts.html')">
+                     <div class="card-icon">🍰</div>
+                     <h3>Десерты</h3>
+                     <p>Попробуйте изысканные французские десерты.</p>
+                 </div>
+-                <div class="card" onclick="navigateTo('#salads')">
++                <div class="card" onclick="navigateTo('salads.html')">
+                     <div class="card-icon">🥗</div>
+                     <h3>Салаты</h3>
+                     <p>Свежие и вкусные рецепты салатов.</p>
+                 </div>
+                 <div class="card" onclick="navigateTo('drinks.html')">
+                     <div class="card-icon">🍷</div>
+                     <h3>Напитки</h3>
+                     <p>Изучите разнообразие французских напитков.</p>
+                 </div>
+             </div>
+         </main>
+ 
+         <footer class="footer">
+             <div class="footer-container">
+                 <div class="contact-info">
+                     <h3>Контакты автора</h3>
+                     <p>Gmail: k.leshkov34@gmail.com</p>
+                     <p>Телефон: +705 128 94 67</p>
+                 </div>
+                 <div class="qr-code">
+                     <img src="qr-code-placeholder.png" alt="QR-код" class="qr-image">
+                 </div>
+                 <div class="additional-info">
+                     <h3>О учебнике</h3>
+                     <p>В учебнике будет рассказано о истории Французской кухни и предоставлены рецепты разнообразных блюд.</p>
+ 
+EOF
+)
                 </div>
             </div>
         </footer>
